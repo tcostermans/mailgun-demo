@@ -4,6 +4,8 @@ class MailController < ApplicationController
 
   def send_mail
     Rails.logger.info "Sending e-mail #{email}"
+    #sleep 10
+    #SYNCHRONOUS!!!!
     ExampleMailer.sample_email.deliver_now!
     redirect_to mail_index_path, notice: 'Mail sent!'
   end
