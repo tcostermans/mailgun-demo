@@ -1,0 +1,13 @@
+<h1>Demo time!</h1>
+<h4>speaker: resource 679852a5-9ac8-4f9c-86d2-df0ab44effd0</h4>
+
+
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<br>
+<%= form_for :mail, url: "/mail/send_mail" do |form| %>
+    <%= form.text_field :email %>
+    <%= form.submit  %>
+<% end  %>
+
